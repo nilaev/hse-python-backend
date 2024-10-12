@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any
+from typing import Any, Optional
 
 import pytest
 from async_asgi_testclient import TestClient
@@ -84,9 +84,9 @@ async def test_fibonacci(params: str, status_code: int):
         ([1.0, 2.0, 3.0], HTTPStatus.OK),
     ],
 )
-async def test_mean(json: dict[str, Any] | None, status_code: int):
-    async with TestClient(app) as client:
-        response = await client.get("/mean", json=json)
+
+def test_mean(json: Optional[dict[str, Any]], status_code: int):
+    response = requests.get(BASE_URL + "/mean", json=json)
 
     assert response.status_code == status_code
     if status_code == HTTPStatus.OK:
