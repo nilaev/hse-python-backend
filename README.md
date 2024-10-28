@@ -11,3 +11,5 @@
 - [Условие](./lecture_1/hw/README.md)
 - [Решение](./lecture_1/hw/math_plain_asgi.py)
 - [Тесты](./tests/test_homework_1.py)
+
+## Лекция 2
