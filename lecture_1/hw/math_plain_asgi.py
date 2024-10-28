@@ -25,6 +25,8 @@ async def app(
     else:
         if path == "/factorial":
             await factorial(scope, receive, send)
+        elif path.startswith("/fibonacci"):
+            await fibonacci(scope, receive, send)
         elif path == "/mean":
             await mean(scope, receive, send)
         else:
@@ -82,7 +84,7 @@ def count_fibonacci(n):
 
 
 async def fibonacci(scope, receive, send):
-    path = path.split("/")
+    path = scope["path"].split("/")
     if notIsDigit(path[-1]):
         await error(send, 422, "Unprocessable Entity")
         return
