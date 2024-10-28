@@ -25,8 +25,6 @@ async def app(
     else:
         if path == "/factorial":
             await factorial(scope, receive, send)
-        elif path.startswith("/fibonacci"):
-            await fibonacci(scope, receive, send)
         elif path == "/mean":
             await mean(scope, receive, send)
         else:
