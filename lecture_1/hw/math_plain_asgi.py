@@ -104,10 +104,14 @@ async def mean(scope, receive, send):
         await error(send, 422, "Unprocessable Entity")
         return
     try:
-        json.loads(body)
-    except:
-        raise await error(send, 422, "Unprocessable Entity")
-    data = json.loads(body)
+        data = json.loads(body)
+    except json.JSONDecodeError:
+        await error(send, 422, "Unprocessable Entity")
+        return
+
+    if not isinstance(data, list):
+        await error(send, 422, "Unprocessable Entity")
+        return
 
     if len(data) < 1:
         await error(send, 400, "Bad Request")
