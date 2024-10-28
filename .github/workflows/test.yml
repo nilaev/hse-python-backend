@@ -2,9 +2,13 @@ name: Run python tests
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
+      - task-1
   pull_request:
-    branches: ["main"]
+    branches:
+      - main
+      - task-1
 
 jobs:
   build:
@@ -26,7 +30,5 @@ jobs:
         run: poetry install
       - name: Run tests
         run: poetry run pytest -vv --strict --showlocals
-      - name: Run homework_1 tests
-        run: poetry run pytest -vv --strict --showlocals tests/test_homework_1.py
       - name: Run lecture 4 tests
         run: poetry run pytest -vv --strict --showlocals --cov=lecture_4/demo_service ./tests/lecture_4/hw
