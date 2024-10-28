@@ -2,13 +2,9 @@ name: Run python tests
 
 on:
   push:
-    branches:
-      - main
-      - task-1
+    branches: ["main"]
   pull_request:
-    branches:
-      - main
-      - task-1
+    branches: ["main"]
 
 jobs:
   build:
