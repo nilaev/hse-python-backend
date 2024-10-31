@@ -13,3 +13,6 @@
 - [Тесты](./tests/test_homework_1.py)
 
 ## Лекция 2
+- [Условие](./lecture_2/hw/README.md)
+- [Решение](./lecture_2/hw/shop_api)
+- [Тесты](./tests/test_homework_2.py)
