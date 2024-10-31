@@ -12,7 +12,11 @@
 - [Решение](./lecture_1/hw/math_plain_asgi.py)
 - [Тесты](./tests/test_homework_1.py)
 
-## Лекция 2
+## Лекция 2 - API
 - [Условие](./lecture_2/hw/README.md)
 - [Решение](./lecture_2/hw/shop_api)
 - [Тесты](./tests/test_homework_2.py)
+
+## Лекция 3 - Deploy & Monitoring
+- [Условие](./lecture_3/hw/task.md)
+- [Решение](./lecture_3/hw/solution.md)
